@@ -21,7 +21,7 @@ describe('fetchBreedDescription', () => {
   it('returns an error for an invalid breed, via callback', (done) => {
     fetchBreedDescription('husky', (err, desc) => {
 
-      assert.equal(err, `Breed name husky was not found`);
+      assert.equal(err, `Breed name husky was not found!`);
       assert.equal(desc, null);
 
       done();
