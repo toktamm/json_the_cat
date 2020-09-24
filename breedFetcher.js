@@ -5,9 +5,9 @@ const fetchBreedDescription = function(breedName, callback) {
   request(url, (error, response, body) => {
     const data = JSON.parse(body);
     if (data.length === 0) {
-      console.log("No results found!");
-    } else if (error) {
-      callback(error, null);   // because there's no data(description) ie an error so it's null
+      //on line 9 we're calling the callback is defined in index.js 
+      //with the parameters i.e error being "Breed not found!"
+      callback("Breed not found!", null);   // because there's no data(description) ie an error so it's null
       // console.log(error);
     } else {
       callback(null, data[0]["description"]);
